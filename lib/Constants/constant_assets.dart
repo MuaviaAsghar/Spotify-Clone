@@ -2,6 +2,10 @@
 const kGothamFont = 'Gotham';
 
 // Images
+const kBellIcon="assets/images/bell_icon.svg";
+const kListeningHistory="assets/images/listening_history.svg";
+const kSettingGear="assets/images/setting_gear.svg";
+
 // const kBackgroundImage = 'assets/image/Background.png';
 // const kBackgroundImage2 = 'assets/image/Background1.png';
 // const kFacebookIcon = 'assets/image/facebook.png';

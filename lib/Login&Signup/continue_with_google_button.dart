@@ -5,7 +5,8 @@ import 'package:myapp/Constants/constant_colors.dart';
 import 'package:myapp/Constants/constant_assets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../BasicLogics/signin_with_google.dart';
+import '../Logics/firebase_services.dart';
+import '../Widgets/show_message.dart';
 
 class ContinueWithGoogleButton extends HookConsumerWidget {
   const ContinueWithGoogleButton({super.key});
@@ -13,8 +14,16 @@ class ContinueWithGoogleButton extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return ElevatedButton(
-        onPressed: () {
-          SigninWithGoogle();
+        onPressed: () async {
+          FirebaseService service = FirebaseService();
+          try {
+            await service.signInwithGoogle();
+          } catch (e) {
+            if (e is FirebaseAuthException) {
+              showMessage(e.message!, context);
+            }
+          }
+          await Navigator.pushReplacementNamed(context, '/home');
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: kBlackColor,
