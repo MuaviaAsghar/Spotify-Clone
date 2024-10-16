@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:myapp/Constants/constant_assets.dart';
 
 import '../Constants/constant_colors.dart';
+import '../Constants/constant_screen_size.dart';
 
 class HomeScreenAppbar extends HookConsumerWidget
     implements PreferredSizeWidget {
@@ -12,10 +13,11 @@ class HomeScreenAppbar extends HookConsumerWidget
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final screenSize = ConstantScreenSize(context);
     return Padding(
       padding: EdgeInsets.symmetric(
-        vertical: MediaQuery.sizeOf(context).height * 0.02,
-      ),
+          horizontal: screenSize.screenWidth * 0.02,
+          vertical: screenSize.screenHeight * 0.03),
       child: AppBar(
         title: Text(
           DateTime.now().hour < 12

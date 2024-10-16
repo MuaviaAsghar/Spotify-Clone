@@ -16,26 +16,27 @@ class PlayListCard extends ConsumerWidget {
     WidgetRef ref,
   ) {
     return Card(
-      color: Color.fromARGB(255, 41, 41, 41),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.zero,
+      ),
+      color: const Color.fromARGB(255, 41, 41, 41),
       child: Stack(
         // alignment: const AlignmentDirectional(0, -1),
         children: [
           Align(
             alignment: Alignment.centerLeft,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(8),
               child: Image.network(
                 'https://picsum.photos/seed/300/600',
-                width: 50,
-                height: 50,
                 fit: BoxFit.cover,
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Align(
-              alignment: Alignment.center,
+          Align(
+            alignment: Alignment.center,
+            child: Padding(
+              padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.height * 0.05),
               child: Text(
                 'Hello World',
                 style: TextStyle(color: kWhiteColor),
