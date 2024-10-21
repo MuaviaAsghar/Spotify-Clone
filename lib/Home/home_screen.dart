@@ -19,7 +19,7 @@ class HomeScreen extends HookConsumerWidget {
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: screenSize.screenWidth * 0.02),
+                    horizontal: screenSize.screenWidth * 0.03),
                 child: GridView.builder(
                   shrinkWrap: true, // Constrain the height of GridView
                   physics:

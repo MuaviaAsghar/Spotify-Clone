@@ -37,7 +37,7 @@ class PlayListCard extends ConsumerWidget {
             child: Padding(
               padding: EdgeInsets.only(
                   left: MediaQuery.of(context).size.height * 0.05),
-              child: Text(
+              child: const Text(
                 'Hello World',
                 style: TextStyle(color: kWhiteColor),
               ),

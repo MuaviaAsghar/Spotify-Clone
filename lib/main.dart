@@ -35,7 +35,7 @@ class MyApp extends HookConsumerWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: (kBlackColor),
-        appBarTheme: AppBarTheme(color: kBlackColor),
+        appBarTheme: const AppBarTheme(color: kBlackColor),
  
         colorScheme: ColorScheme.fromSeed(seedColor: kWhiteColor),
         useMaterial3: true,

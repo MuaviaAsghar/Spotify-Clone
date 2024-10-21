@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hover_effect/flutter_hover_effect.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:myapp/Constants/constant_assets.dart';
@@ -15,9 +14,7 @@ class HomeScreenAppbar extends HookConsumerWidget
   Widget build(BuildContext context, WidgetRef ref) {
     final screenSize = ConstantScreenSize(context);
     return Padding(
-      padding: EdgeInsets.symmetric(
-          horizontal: screenSize.screenWidth * 0.02,
-          vertical: screenSize.screenHeight * 0.03),
+      padding: EdgeInsets.symmetric(vertical: screenSize.screenHeight * 0.03),
       child: AppBar(
         title: Text(
           DateTime.now().hour < 12
