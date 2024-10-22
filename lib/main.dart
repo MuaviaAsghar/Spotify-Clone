@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:myapp/Login&Signup/login_screen.dart';
 import 'package:platform_info/platform_info.dart';
+
 import 'Constants/constant_colors.dart';
 import 'Home/home_screen.dart';
 import 'SplashScreen/splash_screen.dart';
 import 'firebase_options.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,6 +18,7 @@ void main() async {
   );
   await Hive.initFlutter();
   await Hive.openBox('userBox');
+
   runApp(
     const ProviderScope(
       child: MyApp(),
@@ -36,7 +37,6 @@ class MyApp extends HookConsumerWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: (kBlackColor),
         appBarTheme: const AppBarTheme(color: kBlackColor),
- 
         colorScheme: ColorScheme.fromSeed(seedColor: kWhiteColor),
         useMaterial3: true,
       ),

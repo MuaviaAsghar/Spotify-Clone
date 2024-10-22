@@ -16,6 +16,7 @@ class HomeScreenAppbar extends HookConsumerWidget
     return Padding(
       padding: EdgeInsets.symmetric(vertical: screenSize.screenHeight * 0.03),
       child: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
           DateTime.now().hour < 12
               ? "Good morning"
